@@ -20,6 +20,8 @@ class SimpleUIForTesting {
 
     public void RunUI()
     {
+        ListHandler listModifier = new ListHandler();
+
         for(;;)
         {
 
@@ -28,6 +30,7 @@ class SimpleUIForTesting {
             System.out.println("---------------------");
             System.out.println("1. Selite 2. Priority 3.Deadline 4. Suoritettu");
             GetJSON();
+            listModifier.ListTasks();
             System.out.println("(A)dd new (E)dit (D)elete (M)ark as done (L)ist old e(X)it (S)ave");
             
             command = keyboard.next().charAt(0);
@@ -37,32 +40,35 @@ class SimpleUIForTesting {
             switch(command){
                 case 'A':
                 case 'a':
-                    System.out.println("Add New");
-                    break;
+                    listModifier.AddTask();
+                break;
+
                 case 'E':
                 case 'e':
-                    System.out.println("Edit");
-                    break;
+                    listModifier.EditTask();
+                break;
+                
                 case 'D':
                 case 'd':
-                    System.out.println("Delete");
-                    break;
+                    listModifier.DeleteTasks();
+                break;
+                
                 case 'M':
                 case 'm':
-                    System.out.println("Mark as done");
-                    break;
+                    listModifier.MarkTaskAsDone();
+                break;
+                
                 case 'L':
                 case 'l':
-                    System.out.println("List old tasks");
-                    break;
+                    listModifier.ListOldTasks();
+                break;
+                
                 case 'S':
                 case 's':
-                    System.out.println("Send to server");
-                    break;
+                    listModifier.SendToServer();
+                break;
 
             }
-
-
         }
     }
 
