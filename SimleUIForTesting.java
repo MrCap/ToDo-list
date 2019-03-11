@@ -29,8 +29,8 @@ class SimpleUIForTesting {
             System.out.println("UI For testing");
             System.out.println("---------------------");
             System.out.println("1. Selite 2. Priority 3.Deadline 4. Suoritettu");
-            GetJSON();
-            listModifier.ListTasks();
+
+            listModifier.printList();
             System.out.println("(A)dd new (E)dit (D)elete (M)ark as done (L)ist old e(X)it (S)ave");
             
             command = keyboard.next().charAt(0);
@@ -78,7 +78,7 @@ class SimpleUIForTesting {
     	JSONObject jsonObject=null;
     	JSONHandler jsonhandler = new JSONHandler();
     	try{
-        	 jsonObject = (JSONObject) jsonhandler.readJsonSimpleDemo("C:/Ohjelmointi/koodit/topcon/example.json");
+        	 jsonObject = (JSONObject) jsonhandler.readJsonSimpleDemo("example.json");
        	}catch(Exception ex){System.out.println(ex);}
 
     	System.out.println(jsonObject);
